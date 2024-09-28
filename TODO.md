@@ -9,3 +9,4 @@
   - <https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-storm>
   - <https://uiwjs.github.io/react-codemirror/#/theme/data/tokyo-night-day>
   - <https://github.com/uiwjs/react-codemirror>
+- vscode. <https://github.com/tokyo-night/tokyo-night-vscode-theme>
