@@ -1,0 +1,56 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Default settings for all files
+[*]
+# Use 2 spaces for indentation
+indent_style = space
+indent_size = 2
+# Line endings set to Unix style
+end_of_line = lf
+# Ensure the file ends with a newline
+insert_final_newline = true
+# Set maximum line length for better readability
+max_line_length = 80
+# Trim any whitespace at the end of lines
+trim_trailing_whitespace = true
+# Character set
+charset = utf-8
+
+# Settings for HTML files
+[*.html]
+indent_size = 2
+# Ensure <script> and <style> tags follow JS and CSS rules
+insert_final_newline = true
+
+# Settings for CSS and SCSS files
+[*.css]
+indent_size = 2
+# Add final newlines in CSS files
+insert_final_newline = true
+
+# Settings for JavaScript and HTMX event scripts (if applicable)
+[*.js]
+indent_size = 2
+# Insert final newlines in JS files as well
+insert_final_newline = true
+
+# Settings for Markdown files
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+
+# Settings for JSON files (used in config files like package.json)
+[*.json]
+indent_size = 2
+
+# Special settings for YAML files (used in GitHub actions, etc.)
+[*.yml, *.yaml]
+indent_size = 2
+
+# Ignore generated build files or folders
+[*.min.js]
+max_line_length = off
+insert_final_newline = false
