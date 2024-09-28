@@ -2,65 +2,113 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tokyo Night Themes for All the Apps</title>
+
     <script
       src="https://unpkg.com/htmx.org@2.0.2"
       integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Import the Tokyo Night CSS file -->
+    <link rel="stylesheet" href="/static/tokyonight-theme.css" />
   </head>
   <body>
-    <h1>tokyonight colours for 10+ apps</h1>
-    <h2>Discovery</h2>
-    <strong>Categories</strong>
-    <ul>
-      <li>Browsers</li>
-      <li>Editors</li>
-      <li>IDE's</li>
-      <li>Social</li>
-      <li>Services</li>
-      <li>Terminals</li>
-      <li>Others</li>
-    </ul>
+    <header>
+      <h1>Tokyo Night Themes for All the Apps</h1>
+    </header>
 
-    <h2>Apps</h2>
-    <h3>Browsers</h3>
-    <ul>
-      <li>
-        <a href="https://www.mozilla.org/en-US/firefox/new/" hx-get="/firefox"
-          >Firefox</a
-        >
-      </li>
-      <li>
-        <a href="https://www.google.com/chrome/" hx-get="/chrome">Chrome</a>
-      </li>
-      <li>
-        <a href="https://www.microsoft.com/en-us/edge" hx-get="/edge">Edge</a>
-      </li>
-    </ul>
+    <main>
+      <h2>Discovery</h2>
+      <strong>Categories</strong>
+      <ul>
+        <li>Browsers</li>
+        <li>Editors</li>
+        <li>IDE's</li>
+        <li>Social</li>
+        <li>Services</li>
+        <li>Terminals</li>
+        <li>Others</li>
+      </ul>
 
-    <h3>Editors</h3>
-    <ul>
-      <li>
-        <a href="https://code.visualstudio.com/" hx-get="/vscode">VSCode</a>
-      </li>
-      <li>
-        <a href="https://www.sublimetext.com/" hx-get="/sublime">Sublime</a>
-      </li>
-      <li><a href="https://www.vim.org/" hx-get="/vim">Vim</a></li>
-    </ul>
+      <h2>Apps</h2>
 
-    <h3>IDE's</h3>
-    <ul>
-      <li>
-        <a href="https://www.jetbrains.com/idea/" hx-get="/idea">IntelliJ</a>
-      </li>
-      <li><a href="https://www.eclipse.org/" hx-get="/eclipse">Eclipse</a></li>
-      <li>
-        <a href="https://www.jetbrains.com/pycharm/" hx-get="/pycharm"
-          >PyCharm</a
-        >
-      </li>
-    </ul>
+      <h3>Browsers</h3>
+      <ul>
+        <li>
+          <a hx-get="/firefox" hx-target="#app-details" hx-swap="innerHTML"
+            >Firefox</a
+          >
+        </li>
+        <li>
+          <a hx-get="/chrome" hx-target="#app-details" hx-swap="innerHTML"
+            >Chrome</a
+          >
+        </li>
+        <li>
+          <a hx-get="/edge" hx-target="#app-details" hx-swap="innerHTML"
+            >Edge</a
+          >
+        </li>
+      </ul>
+
+      <h3>Editors</h3>
+      <ul>
+        <li>
+          <a hx-get="/vscode" hx-target="#app-details" hx-swap="innerHTML"
+            >VSCode</a
+          >
+        </li>
+        <li>
+          <a hx-get="/sublime" hx-target="#app-details" hx-swap="innerHTML"
+            >Sublime</a
+          >
+        </li>
+        <li>
+          <a hx-get="/nvim" hx-target="#app-details" hx-swap="innerHTML"
+            >Neovim</a
+          >
+        </li>
+        <li>
+          <a hx-get="/vim" hx-target="#app-details" hx-swap="innerHTML">Vim</a>
+        </li>
+      </ul>
+
+      <h3>IDE's</h3>
+      <ul>
+        <li>
+          <a hx-get="/idea" hx-target="#app-details" hx-swap="innerHTML"
+            >IntelliJ</a
+          >
+        </li>
+        <li>
+          <a hx-get="/eclipse" hx-target="#app-details" hx-swap="innerHTML"
+            >Eclipse</a
+          >
+        </li>
+        <li>
+          <a hx-get="/pycharm" hx-target="#app-details" hx-swap="innerHTML"
+            >PyCharm</a
+          >
+        </li>
+      </ul>
+
+      <div
+        id="app-details"
+        style="
+          margin-top: 2em;
+          background-color: #32344a;
+          padding: 1em;
+          border-radius: 8px;
+        "
+      >
+        <!-- Content from HTMX requests will be loaded here -->
+      </div>
+    </main>
+
+    <footer>
+      <p>Made with ❤️ using htmx, GitHub Pages, Copilot, and VSCode</p>
+    </footer>
   </body>
 </html>
