@@ -1,0 +1,23 @@
+.page-content {
+  margin: 0 10rem;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  /* vertical stacking flex layout */
+  flex-direction: column;
+}
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  padding: 1em;
+  background-color: var(--current-line-color);
+}

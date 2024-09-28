@@ -1,0 +1,78 @@
+<section class="hero">
+  <h1>🏙 Tokyo Night Neovim Theme</h1>
+  <h2>Neovim Setup Guide</h2>
+</section>
+
+<div class="page-content">
+  <div class="instructions">
+    <h2>Installing <code>folke/tokyonight.nvim</code> Neovim Theme</h2>
+    <p>
+      These instructions assume that you have Neovim (version 0.5 or later) installed, along with a plugin manager of
+      your choice. The setup assumes that the plugin manager is already configured in your Neovim setup. If not,
+      you'll need to install the respective plugin manager first. The instructions provided below include sane
+      defaults for setting up the <code>tokyonight.nvim</code> theme and applying the colorscheme.
+    </p>
+
+    <h3>Popular Neovim Plugin Managers</h3>
+
+    <h4>vim-plug</h4>
+    <pre><code>Plug 'folke/tokyonight.nvim'
+colorscheme tokyonight
+        </code></pre>
+
+    <h4>packer.nvim</h4>
+    <pre><code class="language-lua">use {
+  'folke/tokyonight.nvim',
+  config = function()
+    require('tokyonight').setup({})
+    vim.cmd('colorscheme tokyonight')
+  end
+}
+        </code></pre>
+
+    <h4>lazy.nvim</h4>
+    <pre><code class="language-lua">{
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  config = function()
+    vim.cmd('colorscheme tokyonight')
+  end
+}</code></pre>
+  </div>
+
+  <div class="instructions">
+    <h3>Less Popular Neovim/Vim Plugin Managers</h3>
+
+    <h4>Install using Git</h4>
+    <p>If you are a Git user, you can install the theme and keep up to date by cloning the repository:</p>
+    <pre><code class="language-bash">git clone https://github.com/folke/tokyonight.nvim ~/.config/nvim/plugged/tokyonight.nvim</code></pre>
+
+    <p>If you're using one of the less common plugin managers, here are the respective instructions:</p>
+
+    <h4>dein.vim</h4>
+    <pre><code>call dein#add('folke/tokyonight.nvim')
+colorscheme tokyonight</code></pre>
+
+    <h4>vundle</h4>
+    <pre><code>
+Plugin 'folke/tokyonight.nvim'
+colorscheme tokyonight</code></pre>
+
+    <h4>minpac</h4>
+    <pre><code>call minpac#add('folke/tokyonight.nvim')
+colorscheme tokyonight</code></pre>
+
+    <h4>Pathogen (manual installation)</h4>
+    <pre><code class="language-bash">git clone https://github.com/folke/tokyonight.nvim ~/.vim/bundle/tokyonight.nvim</code></pre>
+    <p>In your <code>vimrc</code>:</p>
+    <pre><code class="language-vim">colorscheme tokyonight</code></pre>
+
+    <p>Note: It's recommended to use one of the more modern plugin managers (like <code>vim-plug</code>,
+      <code>packer.nvim</code>, or <code>lazy.nvim</code>) for a better experience and more features.
+    </p>
+  </div>
+</div>
+
+<script>hljs.highlightAll();</script>

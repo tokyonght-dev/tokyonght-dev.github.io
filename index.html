@@ -1,114 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tokyo Night Themes for All the Apps</title>
 
-    <script
-      src="https://unpkg.com/htmx.org@2.0.2"
-      integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tokyo Night Themes</title>
 
-    <!-- Import the Tokyo Night CSS file -->
-    <link rel="stylesheet" href="/static/tokyonight-theme.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Tokyo Night Themes for All the Apps</h1>
-    </header>
+  <script src="https://unpkg.com/htmx.org@2.0.2"
+    integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
+    crossorigin="anonymous"></script>
 
+
+  <link rel="stylesheet" href="/static/tokyonight-theme.css" />
+  <link rel="stylesheet" href="/static/website.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/tokyo-night-dark.css"
+    integrity="sha512-+2gZRUBRo65MXQNdZ/cVX90M2iDKAyb/52muHcgh6F2iarNtc0aX1FE3kAxG9fJxzsgCtxjxZ6nWecrgMTVYnQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <header>
+    <!-- Load header dynamically -->
+    <div hx-get="/partials/header.html" hx-trigger="load" hx-target="this"></div>
+  </header>
+
+  <div id="app-content">
     <main>
-      <h2>Discovery</h2>
-      <strong>Categories</strong>
-      <ul>
-        <li>Browsers</li>
-        <li>Editors</li>
-        <li>IDE's</li>
-        <li>Social</li>
-        <li>Services</li>
-        <li>Terminals</li>
-        <li>Others</li>
-      </ul>
-
       <h2>Apps</h2>
-
-      <h3>Browsers</h3>
-      <ul>
-        <li>
-          <a hx-get="/firefox" hx-target="#app-details" hx-swap="innerHTML"
-            >Firefox</a
-          >
-        </li>
-        <li>
-          <a hx-get="/chrome" hx-target="#app-details" hx-swap="innerHTML"
-            >Chrome</a
-          >
-        </li>
-        <li>
-          <a hx-get="/edge" hx-target="#app-details" hx-swap="innerHTML"
-            >Edge</a
-          >
-        </li>
-      </ul>
-
+      <!-- tag to indent semantically -->
       <h3>Editors</h3>
       <ul>
         <li>
-          <a hx-get="/vscode" hx-target="#app-details" hx-swap="innerHTML"
-            >VSCode</a
-          >
-        </li>
-        <li>
-          <a hx-get="/sublime" hx-target="#app-details" hx-swap="innerHTML"
-            >Sublime</a
-          >
-        </li>
-        <li>
-          <a hx-get="/nvim" hx-target="#app-details" hx-swap="innerHTML"
-            >Neovim</a
-          >
-        </li>
-        <li>
-          <a hx-get="/vim" hx-target="#app-details" hx-swap="innerHTML">Vim</a>
+          <a hx-get="/pages/apps/nvim.html" hx-target="#app-content">Neovim</a>
         </li>
       </ul>
-
-      <h3>IDE's</h3>
-      <ul>
-        <li>
-          <a hx-get="/idea" hx-target="#app-details" hx-swap="innerHTML"
-            >IntelliJ</a
-          >
-        </li>
-        <li>
-          <a hx-get="/eclipse" hx-target="#app-details" hx-swap="innerHTML"
-            >Eclipse</a
-          >
-        </li>
-        <li>
-          <a hx-get="/pycharm" hx-target="#app-details" hx-swap="innerHTML"
-            >PyCharm</a
-          >
-        </li>
-      </ul>
-
-      <div
-        id="app-details"
-        style="
-          margin-top: 2em;
-          background-color: #32344a;
-          padding: 1em;
-          border-radius: 8px;
-        "
-      >
-        <!-- Content from HTMX requests will be loaded here -->
-      </div>
     </main>
+  </div>
 
-    <footer>
-      <p>Made with ❤️ using htmx, GitHub Pages, Copilot, and VSCode</p>
-    </footer>
-  </body>
+  <footer>
+    <!-- Load footer dynamically -->
+    <div hx-get="/partials/footer.html" hx-trigger="load" hx-target="this"></div>
+  </footer>
+</body>
+
 </html>
